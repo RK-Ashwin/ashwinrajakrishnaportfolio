@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ashwin Rajakrishna — IT Analyst & Networking/Cybersecurity Student. Portfolio showcasing experience, skills, and projects.">
+  <title>Ashwin Rajakrishna — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav>
+  <div class="nav-logo">AR</div>
+  <ul class="nav-links">
+    <li><a data-page="home">Home</a></li>
+    <li><a data-page="about">About</a></li>
+    <li><a data-page="skills">Skills</a></li>
+    <li><a data-page="projects">Projects</a></li>
+    <li><a data-page="contact">Contact</a></li>
+    <li class="admin-only"><a data-page="admin">Admin Panel</a></li>
+  </ul>
+  <div class="nav-right">
+    <span class="admin-badge">Admin</span>
+    <button class="logout-btn" id="logoutBtn">Log out</button>
+    <button class="btn-nav-admin" id="adminBtn">Admin</button>
+  </div>
+</nav>
+
+<!-- ============================================================
+     PAGE: HOME
+     ============================================================ -->
+<div class="page" id="home">
+  <div class="hero-inner">
+    <p class="hero-tag" id="heroTag">Networking &amp; Cybersecurity</p>
+    <h1 class="hero-name" id="heroName">Ashwin<br><span>Rajakrishna</span></h1>
+    <p class="hero-sub" id="heroSub">IT Analyst &amp; Computer Science student passionate about building secure, reliable infrastructure and solving complex technical challenges.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="navigateTo('projects')">View Projects</button>
+      <button class="btn-outline" onclick="navigateTo('contact')">Get in Touch</button>
+    </div>
+    <div class="hero-highlights fade-in" id="heroHighlights">
+      <!-- Populated by JS -->
+    </div>
+    <div class="hero-scroll" onclick="navigateTo('about')">
+      <span>Explore</span>
+      <div class="scroll-line"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     PAGE: ABOUT
+     ============================================================ -->
+<div class="page" id="about">
+  <div class="section-wrap">
+
+    <!-- About Me -->
+    <div class="section-header fade-in">
+      <p class="section-label" id="aboutSectionLabel">Who I Am</p>
+      <h2 class="section-title" id="aboutSectionTitle">About Me</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="about-grid">
+      <div class="fade-in">
+        <div class="about-avatar" id="aboutAvatar">AR</div>
+      </div>
+      <div class="fade-in">
+        <div class="about-text" id="aboutText">
+          <!-- Populated by JS -->
+        </div>
+        <div class="about-details">
+          <div class="detail-item">
+            <div class="detail-label">Location</div>
+            <div class="detail-val" id="detailLocation">—</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">Email</div>
+            <div class="detail-val" id="detailEmail">—</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">Phone</div>
+            <div class="detail-val" id="detailPhone">—</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">Status</div>
+            <div class="detail-val" id="detailStatus">—</div>
+          </div>
+        </div>
+        <div class="edu-block" id="eduBlock">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience -->
+    <div style="margin-top: 5rem;">
+      <div class="section-header fade-in">
+        <p class="section-label" id="experienceSectionLabel">Career</p>
+        <h2 class="section-title" id="experienceSectionTitle">Experience</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="exp-list fade-in" id="expList">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================================
+     PAGE: SKILLS
+     ============================================================ -->
+<div class="page" id="skills">
+  <div class="section-wrap">
+    <div class="section-header fade-in">
+      <p class="section-label" id="skillsSectionLabel">Expertise</p>
+      <h2 class="section-title" id="skillsSectionTitle">Skills</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div id="skillsGrid" class="skills-grid fade-in">
+      <!-- Populated by JS -->
+    </div>
+
+    <div class="certifications-wrap fade-in">
+      <div class="section-header section-header-tight">
+        <p class="section-label" id="certSectionLabel">Credentials</p>
+        <h3 class="section-subtitle" id="certSectionTitle">Certifications</h3>
+      </div>
+      <div id="certificationsGrid" class="certifications-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <!-- Admin: Add skill -->
+    <div class="skill-add-row fade-in">
+      <input class="field-input" type="text" id="newSkillInput" placeholder="Type a skill and press Enter or click Add…" style="max-width: 360px;">
+      <button class="btn-small" onclick="addSkill()">+ Add Skill</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     PAGE: PROJECTS
+     ============================================================ -->
+<div class="page" id="projects">
+  <div class="section-wrap">
+    <div class="section-header fade-in">
+      <p class="section-label" id="projectsSectionLabel">My Work</p>
+      <h2 class="section-title" id="projectsSectionTitle">Projects</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div id="projectsGrid" class="projects-grid fade-in">
+      <!-- Populated by JS -->
+    </div>
+
+    <!-- Admin: Add project -->
+    <div class="add-project-panel fade-in">
+      <p class="panel-title">Add New Project</p>
+      <div class="form-field">
+        <label>Project Title</label>
+        <input class="field-input" type="text" id="newProjTitle" placeholder="e.g. Home Lab Network Setup">
+      </div>
+      <div class="form-field">
+        <label>Category Tag</label>
+        <input class="field-input" type="text" id="newProjTag" placeholder="e.g. Networking, Security, Development">
+      </div>
+      <div class="form-field">
+        <label>Description</label>
+        <textarea id="newProjDesc" placeholder="Describe the project and your contribution…"></textarea>
+      </div>
+      <div class="form-field">
+        <label>Project URL</label>
+        <input class="field-input" type="url" id="newProjUrl" placeholder="https://github.com/... or live demo link">
+      </div>
+      <div>
+        <button class="btn-small" onclick="addProject()">+ Add Project</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     PAGE: CONTACT
+     ============================================================ -->
+<div class="page" id="contact">
+  <div class="section-wrap">
+    <div class="section-header fade-in">
+      <p class="section-label" id="contactSectionLabel">Let's Connect</p>
+      <h2 class="section-title" id="contactSectionTitle">Contact</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- Left column -->
+      <div class="fade-in">
+        <p class="contact-intro-text" id="contactIntroText">I'm currently open to new opportunities in IT, networking, and cybersecurity. Whether you have a role to discuss or just want to connect, feel free to reach out.</p>
+
+        <div class="contact-links">
+          <div class="contact-link-item" onclick="window.open('mailto:' + document.getElementById('contactEmail').textContent)">
+            <div class="contact-icon">✉</div>
+            <div class="contact-link-text">
+              <strong>Email</strong>
+              <span id="contactEmail">—</span>
+            </div>
+            <span class="contact-arrow">→</span>
+          </div>
+
+          <div class="contact-link-item">
+            <div class="contact-icon">☎</div>
+            <div class="contact-link-text">
+              <strong>Phone</strong>
+              <span id="contactPhone">—</span>
+            </div>
+          </div>
+
+          <div class="contact-link-item">
+            <div class="contact-icon" style="font-size:0.68rem;font-weight:600;">ON</div>
+            <div class="contact-link-text">
+              <strong>Location</strong>
+              <span id="contactLocation">—</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resume block -->
+        <div class="resume-section">
+          <h4>Resume</h4>
+          <div class="resume-link-row">
+            <div class="resume-url-display" id="resumeUrlDisplay">No resume uploaded yet.</div>
+            <button class="btn-small" onclick="downloadResume()">Download</button>
+          </div>
+          <!-- Admin only -->
+          <div class="resume-edit-form">
+            <div class="form-field">
+              <label>Resume PDF</label>
+              <div class="resume-dropzone" id="resumeDropzone" tabindex="0" role="button" aria-label="Upload resume PDF">
+                <input type="file" id="resumeFileInput" accept="application/pdf" hidden>
+                <strong>Drop a PDF here</strong>
+                <span>or click to choose a downloadable resume file</span>
+              </div>
+            </div>
+            <button class="btn-small" type="button" onclick="clearResumeFile()">Remove Resume</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column: LinkedIn -->
+      <div class="fade-in">
+        <div class="linkedin-box">
+          <div class="li-header">
+            <div class="li-icon">in</div>
+            <div class="li-header-text">
+              <h3 id="liName">Ashwin Rajakrishna</h3>
+              <p id="liHeadline">IT Analyst · Networking &amp; Cybersecurity Student</p>
+            </div>
+          </div>
+          <p class="li-desc">Connect with me on LinkedIn to stay updated on my work, follow my career journey in IT and cybersecurity, and explore mutual opportunities in technology.</p>
+          <a class="btn-linkedin" id="liBtn" href="#" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            Connect on LinkedIn
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     PAGE: ADMIN
+     ============================================================ -->
+<div class="page" id="admin">
+  <div class="section-wrap">
+    <div class="section-header fade-in">
+      <p class="section-label">Control Center</p>
+      <h2 class="section-title">Admin Panel</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="admin-intro fade-in">
+      <p>Manage the content shown across your portfolio and update your admin credentials from one place.</p>
+      <p class="admin-note" id="adminSecurityNote">Admin controls are available only on trusted local previews for safer editing.</p>
+      <div class="admin-status" id="adminStatus">Sign in to edit this portfolio.</div>
+    </div>
+
+    <div class="admin-grid fade-in" id="adminDashboard">
+      <section class="admin-card">
+        <h3>Section Text</h3>
+        <p class="admin-helper">Rename page headings and labels across the site.</p>
+        <div class="form-field">
+          <label for="adminAboutLabel">About Label</label>
+          <input class="field-input" type="text" id="adminAboutLabel" placeholder="Who I Am">
+        </div>
+        <div class="form-field">
+          <label for="adminAboutTitle">About Title</label>
+          <input class="field-input" type="text" id="adminAboutTitle" placeholder="About Me">
+        </div>
+        <div class="form-field">
+          <label for="adminExperienceLabel">Experience Label</label>
+          <input class="field-input" type="text" id="adminExperienceLabel" placeholder="Career">
+        </div>
+        <div class="form-field">
+          <label for="adminExperienceTitle">Experience Title</label>
+          <input class="field-input" type="text" id="adminExperienceTitle" placeholder="Experience">
+        </div>
+        <div class="form-field">
+          <label for="adminSkillsLabel">Skills Label</label>
+          <input class="field-input" type="text" id="adminSkillsLabel" placeholder="Expertise">
+        </div>
+        <div class="form-field">
+          <label for="adminSkillsTitle">Skills Title</label>
+          <input class="field-input" type="text" id="adminSkillsTitle" placeholder="Skills">
+        </div>
+        <div class="form-field">
+          <label for="adminProjectsLabel">Projects Label</label>
+          <input class="field-input" type="text" id="adminProjectsLabel" placeholder="My Work">
+        </div>
+        <div class="form-field">
+          <label for="adminProjectsTitle">Projects Title</label>
+          <input class="field-input" type="text" id="adminProjectsTitle" placeholder="Projects">
+        </div>
+        <div class="form-field">
+          <label for="adminContactLabel">Contact Label</label>
+          <input class="field-input" type="text" id="adminContactLabel" placeholder="Let's Connect">
+        </div>
+        <div class="form-field">
+          <label for="adminContactTitle">Contact Title</label>
+          <input class="field-input" type="text" id="adminContactTitle" placeholder="Contact">
+        </div>
+        <div class="form-field">
+          <label for="adminCertLabel">Certifications Label</label>
+          <input class="field-input" type="text" id="adminCertLabel" placeholder="Credentials">
+        </div>
+        <div class="form-field">
+          <label for="adminCertTitle">Certifications Title</label>
+          <input class="field-input" type="text" id="adminCertTitle" placeholder="Certifications">
+        </div>
+        <button class="btn-small" type="button" onclick="saveSectionText()">Save Section Text</button>
+      </section>
+
+      <section class="admin-card">
+        <h3>Home and Profile</h3>
+        <div class="form-field">
+          <label for="adminName">Name</label>
+          <input class="field-input" type="text" id="adminName" placeholder="Full name">
+        </div>
+        <div class="form-field">
+          <label for="adminHeroTag">Hero Tag</label>
+          <input class="field-input" type="text" id="adminHeroTag" placeholder="Networking and Cybersecurity">
+        </div>
+        <div class="form-field">
+          <label for="adminTitle">Title</label>
+          <input class="field-input" type="text" id="adminTitle" placeholder="Role or headline">
+        </div>
+        <div class="form-field">
+          <label for="adminSubtitle">Subtitle</label>
+          <textarea id="adminSubtitle" placeholder="Short intro shown on the home page"></textarea>
+        </div>
+        <div class="form-field">
+          <label for="adminStatusText">Status</label>
+          <input class="field-input" type="text" id="adminStatusText" placeholder="Open to opportunities">
+        </div>
+        <div class="form-field">
+          <label for="adminHighlights">Homepage Text Boxes</label>
+          <textarea id="adminHighlights" placeholder="Title | Supporting text&#10;Title | Supporting text"></textarea>
+        </div>
+        <button class="btn-small" type="button" onclick="saveProfileBasics()">Save Profile</button>
+      </section>
+
+      <section class="admin-card">
+        <h3>Photo and Branding</h3>
+        <p class="admin-helper">Upload a personal photo for the About section avatar area.</p>
+        <div class="form-field">
+          <label>Personal Photo</label>
+          <div class="resume-dropzone" id="photoDropzone" tabindex="0" role="button" aria-label="Upload personal photo">
+            <input type="file" id="photoFileInput" accept="image/png,image/jpeg,image/webp,image/gif" hidden>
+            <strong>Drop an image here</strong>
+            <span>or click to choose a profile photo</span>
+          </div>
+        </div>
+        <button class="btn-small" type="button" onclick="clearPhotoFile()">Remove Photo</button>
+      </section>
+
+      <section class="admin-card">
+        <h3>About and Contact</h3>
+        <div class="form-field">
+          <label for="adminAbout">About Paragraphs</label>
+          <textarea id="adminAbout" placeholder="Separate paragraphs with a blank line"></textarea>
+        </div>
+        <div class="form-field">
+          <label for="adminContactIntro">Contact Intro</label>
+          <textarea id="adminContactIntro" placeholder="Intro text for the contact page"></textarea>
+        </div>
+        <div class="form-field">
+          <label for="adminEmail">Email</label>
+          <input class="field-input" type="email" id="adminEmail" placeholder="name@example.com">
+        </div>
+        <div class="form-field">
+          <label for="adminPhone">Phone</label>
+          <input class="field-input" type="text" id="adminPhone" placeholder="Phone number">
+        </div>
+        <div class="form-field">
+          <label for="adminLocation">Location</label>
+          <input class="field-input" type="text" id="adminLocation" placeholder="City, Province, Country">
+        </div>
+        <div class="form-field">
+          <label for="adminLinkedin">LinkedIn URL</label>
+          <input class="field-input" type="url" id="adminLinkedin" placeholder="https://linkedin.com/in/...">
+        </div>
+        <button class="btn-small" type="button" onclick="saveAboutContact()">Save About and Contact</button>
+      </section>
+
+      <section class="admin-card">
+        <h3>Education</h3>
+        <div class="form-field">
+          <label for="adminEduInstitution">Institution</label>
+          <input class="field-input" type="text" id="adminEduInstitution" placeholder="Institution name">
+        </div>
+        <div class="form-field">
+          <label for="adminEduDegree">Degree</label>
+          <input class="field-input" type="text" id="adminEduDegree" placeholder="Degree or program">
+        </div>
+        <div class="form-field">
+          <label for="adminEduPeriod">Period</label>
+          <input class="field-input" type="text" id="adminEduPeriod" placeholder="September 2024 - Present">
+        </div>
+        <button class="btn-small" type="button" onclick="saveEducation()">Save Education</button>
+      </section>
+
+      <section class="admin-card">
+        <h3>Skills</h3>
+        <p class="admin-helper">One skill per line.</p>
+        <div class="form-field">
+          <label for="adminSkills">Skills List</label>
+          <textarea id="adminSkills" placeholder="CCNA&#10;Windows Server&#10;Active Directory"></textarea>
+        </div>
+        <button class="btn-small" type="button" onclick="saveSkillsList()">Save Skills</button>
+      </section>
+
+      <section class="admin-card">
+        <h3>Certifications</h3>
+        <p class="admin-helper">Use one certification per line: <strong>Name | Issuer | Date | URL</strong>. The URL is optional.</p>
+        <div class="form-field">
+          <label for="adminCertifications">Certifications List</label>
+          <textarea id="adminCertifications" placeholder="CCNA | Cisco | 2026 | https://example.com/certificate"></textarea>
+        </div>
+        <button class="btn-small" type="button" onclick="saveCertifications()">Save Certifications</button>
+      </section>
+
+      <section class="admin-card">
+        <h3>Projects</h3>
+        <p class="admin-helper">Use one project per line in the format: <strong>Tag | Title | Description | URL</strong>. The URL part is optional.</p>
+        <div class="form-field">
+          <label for="adminProjects">Projects List</label>
+          <textarea id="adminProjects" placeholder="Networking | Project Title | Short description | https://example.com"></textarea>
+        </div>
+        <button class="btn-small" type="button" onclick="saveProjectsList()">Save Projects</button>
+      </section>
+
+      <section class="admin-card">
+        <h3>Experience</h3>
+        <p class="admin-helper">Use blocks separated by a blank line: title, company, location, period, then one bullet per line.</p>
+        <div class="form-field">
+          <label for="adminExperience">Experience Blocks</label>
+          <textarea id="adminExperience" placeholder="IT Analyst&#10;Clear Summit Group&#10;Etobicoke, ON&#10;June 2025 - March 2026&#10;Supported 200+ users&#10;Improved reliability by 20%"></textarea>
+        </div>
+        <button class="btn-small" type="button" onclick="saveExperienceList()">Save Experience</button>
+      </section>
+
+      <section class="admin-card admin-card-security">
+        <h3>Security</h3>
+        <div class="form-field">
+          <label for="adminUsername">Admin Username</label>
+          <input class="field-input" type="text" id="adminUsername" placeholder="Admin username">
+        </div>
+        <div class="form-field">
+          <label for="adminCurrentPassword">Current Password</label>
+          <input class="field-input" type="password" id="adminCurrentPassword" placeholder="Current password">
+        </div>
+        <div class="form-field">
+          <label for="adminNewPassword">New Password</label>
+          <input class="field-input" type="password" id="adminNewPassword" placeholder="Use 10+ chars with mixed types">
+        </div>
+        <div class="form-field">
+          <label for="adminConfirmPassword">Confirm New Password</label>
+          <input class="field-input" type="password" id="adminConfirmPassword" placeholder="Confirm new password">
+        </div>
+        <button class="btn-small" type="button" onclick="saveSecuritySettings()">Update Credentials</button>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     ADMIN LOGIN MODAL
+     ============================================================ -->
+<div class="modal-overlay" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+    <h2 class="modal-title" id="modalTitle">Admin Login</h2>
+    <p class="modal-sub">Enter your credentials to access the admin panel</p>
+
+    <div class="modal-field">
+      <label for="loginUser">Username</label>
+      <input class="field-input" type="text" id="loginUser" autocomplete="off" placeholder="Username">
+    </div>
+    <div class="modal-field">
+      <label for="loginPass">Password</label>
+      <input class="field-input" type="password" id="loginPass" placeholder="Password">
+    </div>
+
+    <p class="modal-err" id="loginErr" role="alert">Invalid credentials. Please try again.</p>
+    <button class="btn-primary" style="width:100%" onclick="doLogin()">Sign In</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

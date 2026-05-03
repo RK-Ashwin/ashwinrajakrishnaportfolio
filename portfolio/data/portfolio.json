@@ -1,0 +1,117 @@
+{
+  "profile": {
+    "name": "Ashwin Rajakrishna",
+    "title": "IT Analyst & Networking / Cybersecurity Student",
+    "subtitle": "Passionate about building secure, reliable infrastructure and solving complex technical challenges.",
+    "email": "info@ashwinrajakrishna.com",
+    "phone": "416-990-0425",
+    "location": "Oshawa, Ontario, Canada",
+    "linkedin": "https://ca.linkedin.com/in/ashwin-rajakrishna-5b9690205",
+    "resumeUrl": "",
+    "status": "Open to Opportunities",
+    "about": [
+      "I'm Ashwin Rajakrishna, a Networking & Cybersecurity student at the University of Ontario Institute of Technology (UOIT). I bring hands-on IT experience from supporting 200+ users globally, configuring enterprise infrastructure, and driving measurable improvements in system reliability.",
+      "Beyond tech, I'm an entrepreneur at heart - I founded MechMania, a robotics competition that secured $4,000 in funding and brought five schools together for its inaugural event. I thrive where technical skill meets initiative."
+    ]
+  },
+  "education": [
+    {
+      "institution": "University of Ontario Institute of Technology",
+      "degree": "B.IT - Networking & Cybersecurity",
+      "period": "September 2024 - Present",
+      "location": "Oshawa, ON"
+    }
+  ],
+  "experience": [
+    {
+      "title": "IT Analyst",
+      "company": "Clear Summit Group",
+      "location": "Etobicoke, ON",
+      "period": "June 2025 - March 2026",
+      "type": "Part-time",
+      "bullets": [
+        "Maintained and monitored 15+ company servers and core network systems, supporting 200+ global employees.",
+        "Configured and deployed new workstations, laptops, VOIP, and mobile devices including OS installation, software setup, and security configuration.",
+        "Provided Tier 1/2 IT support for 200+ users worldwide, resolving 90%+ of hardware, software, and network issues on first response.",
+        "Monitored network performance (DNS, DHCP, VPN, LAN/WAN) and resolved connectivity issues, reducing recurring network incidents by 25%.",
+        "Performed routine system maintenance, software updates, and infrastructure monitoring, improving system reliability by 20%."
+      ]
+    },
+    {
+      "title": "Marketing Representative",
+      "company": "Fortunate Marketing Solutions",
+      "location": "Whitby, ON",
+      "period": "June 2025 - August 2025",
+      "type": "Full-time",
+      "bullets": [
+        "Promoted within 2 weeks for exceeding performance milestones and demonstrating a strong work ethic.",
+        "Generated over $30,000 in revenue in 60 days, ranking among the top 5% of performers.",
+        "Consistently achieved 100-110% of KPI targets through strong communication and persuasive sales techniques."
+      ]
+    },
+    {
+      "title": "Customer Service Representative / Technical Support",
+      "company": "Canadian Tire Gas Bar",
+      "location": "Waterloo, ON",
+      "period": "December 2020 - August 2024",
+      "type": "Part-time",
+      "bullets": [
+        "Maintained inventory and cleanliness, reducing out-of-stock occurrences by 15%.",
+        "Processed over $5,000 daily in cash, credit, and debit transactions with 100% accuracy rate.",
+        "Earned recognition from the President of Canadian Tire Petroleum with a performance certification.",
+        "Resolved internet connectivity issues and troubleshot CCTV systems with a 95% issue resolution rate."
+      ]
+    },
+    {
+      "title": "Founder - MechMania Robotics Competition",
+      "company": "Waterloo Collegiate Institute",
+      "location": "Waterloo, ON",
+      "period": "June 2023 - May 2024",
+      "type": "Extra-Curricular",
+      "bullets": [
+        "Founded the competition to provide more opportunities for high school students to participate in robotics.",
+        "Pitched and won $4,000 from SMART Waterloo Region.",
+        "Successfully hosted the first-ever MechMania competition in May 2024 with five participating schools."
+      ]
+    }
+  ],
+  "skills": [
+    "Tier 1/2 IT Support",
+    "CCNA",
+    "Active Directory",
+    "Windows Server",
+    "macOS",
+    "TCP/IP",
+    "DNS",
+    "DHCP",
+    "VPN",
+    "LAN/WAN",
+    "Network Monitoring",
+    "VOIP Configuration",
+    "Cybersecurity",
+    "System Maintenance",
+    "Hardware Troubleshooting",
+    "Software Deployment"
+  ],
+  "projects": [
+    {
+      "tag": "Networking",
+      "title": "Enterprise Server Monitoring",
+      "desc": "Maintained and monitored 15+ company servers supporting 200+ global employees at Clear Summit Group, reducing recurring network incidents by 25%."
+    },
+    {
+      "tag": "Infrastructure",
+      "title": "Workstation Deployment Pipeline",
+      "desc": "Configured and deployed workstations, laptops, and VOIP devices including OS installation, software setup, and full security hardening."
+    },
+    {
+      "tag": "Education & Initiative",
+      "title": "MechMania Robotics Competition",
+      "desc": "Founded and organized a robotics competition for high school students, securing $4,000 from SMART Waterloo and hosting five schools at the inaugural 2024 event."
+    }
+  ],
+  "admin": {
+    "username": "admin.AshwinRajakrishna",
+    "password": "temp"
+  }
+}
